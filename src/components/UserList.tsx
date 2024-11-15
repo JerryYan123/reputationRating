@@ -35,7 +35,7 @@ const UserList: React.FC<UserListProps> = ({ title }) => {
         <tbody>
           {USERS.map((user) => (
             <tr key={user.id} className="border-t border-gray-100">
-              <td className="py-4 pl-4 text-black">#{user.rank}</td>
+              <td className="py-4 pl-4 text-black">{user.rank}</td>
               <td className="py-4">
                 <Link href={`/user/${user.id}`} className="flex items-center">
                   <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${getRandomGradient()} flex items-center justify-center text-white text-xs font-bold`}>

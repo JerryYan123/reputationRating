@@ -10,7 +10,7 @@ import Link from "next/link";
 import { PROJECTS, Project } from '@/constants/projects';
 
 const ProjectDetailPage = ({ params }: { params: { id: string } }) => {
-    const unwrappedParams = use(params);
+    const unwrappedParams = params;
     
     const projectDetails: Project = PROJECTS.find(p => p.id === parseInt(unwrappedParams.id)) || {
         id: parseInt(unwrappedParams.id),
