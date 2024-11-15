@@ -1,21 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PROJECTS, Project } from '@/constants/projects';
 
 interface ProjectListProps {
-  title: string; // 为 title 添加类型
+  title: string;
 }
 
 const ProjectList: React.FC<ProjectListProps> = ({ title }) => {
-  const projects = [
-    { id: 1, name: 'Scroll', change: 2, score: 9.9, reviews: 5021 },
-    { id: 2, name: 'Sign Protocol', change: 1, score: 9.8, reviews: 4832 },
-    { id: 3, name: 'Dynamic', change: -2, score: 9.7, reviews: 4567 },
-    { id: 4, name: 'Mina Protocol', change: 2, score: 9.6, reviews: 4123 },
-    { id: 5, name: 'Bitkub', change: -1, score: 9.5, reviews: 3988 },
-    { id: 6, name: 'Oasis Protocol', change: -1, score: 9.4, reviews: 3654 },
-  ];
-
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 w-full">
       <h2 className="text-2xl font-bold mb-6 text-black">{title}</h2>
@@ -29,7 +21,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ title }) => {
           </tr>
         </thead>
         <tbody>
-          {projects.map((project, index) => (
+          {PROJECTS.map((project, index) => (
             <tr key={project.id} className="border-t border-gray-100">
               <td className="py-4 pl-4 text-black">{index + 1}</td>
               <td className="py-4">

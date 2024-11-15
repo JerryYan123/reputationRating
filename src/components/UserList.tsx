@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { USERS, User } from '@/constants/users';
 
 interface UserListProps {
   title: string;
@@ -18,15 +19,6 @@ const getRandomGradient = () => {
 };
 
 const UserList: React.FC<UserListProps> = ({ title }) => {
-  const users = [
-    { id: 1, name: 'vitalik.eth', change: 2, totalReviews: 5021, rank: 1 },
-    { id: 2, name: 'nick.eth', change: 2, totalReviews: 4832, rank: 2 },
-    { id: 3, name: 'ricmoo.eth', change: -1, totalReviews: 4567, rank: 3 },
-    { id: 4, name: 'brantly.eth', change: -3, totalReviews: 4123, rank: 4 },
-    { id: 5, name: 'virgil.eth', change: 3, totalReviews: 3988, rank: 5 },
-    { id: 6, name: 'alisha.eth', change: 2, totalReviews: 3654, rank: 6 },
-  ];
-
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 w-full">
       <h2 className="text-2xl font-bold mb-6 text-black">{title}</h2>
@@ -36,11 +28,12 @@ const UserList: React.FC<UserListProps> = ({ title }) => {
             <th className="text-left font-normal py-3 pl-4">Rank</th>
             <th className="text-left font-normal py-3">Name</th>
             <th className="text-left font-normal py-3">Changes</th>
-            <th className="text-right font-normal py-3 pr-4">Reviews</th>
+            <th className="text-right font-normal py-3">Reviews</th>
+            <th className="text-right font-normal py-3 pr-4">Likes</th>
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {USERS.map((user) => (
             <tr key={user.id} className="border-t border-gray-100">
               <td className="py-4 pl-4 text-black">#{user.rank}</td>
               <td className="py-4">
@@ -57,6 +50,11 @@ const UserList: React.FC<UserListProps> = ({ title }) => {
               <td className="py-4 pr-4">
                 <div className="flex items-center justify-end">
                   <span className="text-xs text-gray-400">{user.totalReviews.toLocaleString()} reviews</span>
+                </div>
+              </td>
+              <td className="py-4 pr-4">
+                <div className="flex items-center justify-end">
+                  <span className="text-xs text-gray-400">{user.totalLikes.toLocaleString()} likes</span>
                 </div>
               </td>
             </tr>

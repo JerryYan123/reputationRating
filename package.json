@@ -11,6 +11,9 @@
   "dependencies": {
     "@dynamic-labs/ethereum": "^3.6.2",
     "@dynamic-labs/sdk-react-core": "^3.6.2",
+    "@faker-js/faker": "^9.2.0",
+    "@tanstack/react-query": "^5.60.5",
+    "ky": "^1.7.2",
     "lucide-react": "^0.459.0",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
