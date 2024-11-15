@@ -1,7 +1,7 @@
 import React from "react";
 import { Search } from "lucide-react";
 import Link from "next/link";
-// import Logo from "../Logo";
+import Logo from "../Logo";
 // import { Button } from "../ui/button";
 import { DynamicWidget } from '@dynamic-labs/sdk-react-core';
 
@@ -11,9 +11,10 @@ const Header = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
-                        {/* TODO: Add Logo */}
+                        
                         <Link href="/">
-                            <span className="text-xl font-bold">Reputation</span>
+                            {/* <span className="text-xl font-bold">Reputation</span> */}
+                            <Logo />
                         </Link>
                     </div>
                     <div className="flex items-center">
