@@ -3,6 +3,7 @@ import { Project, PROJECTS } from '@/constants/projects';
 export interface Comment {
     id: number;
     userId: number;
+    username: string;
     projectId: number;
     date: string;
     rating: number;
@@ -15,6 +16,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 1,
         userId: 1,
+        username: "vitalik.eth",
         projectId: 1, // Scroll
         date: "March 15, 2024",
         rating: 5,
@@ -24,6 +26,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 2,
         userId: 1,
+        username: "vitalik.eth",
         projectId: 2, // Sign Protocol
         date: "March 14, 2024",
         rating: 4,
@@ -34,6 +37,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 3,
         userId: 2,
+        username: "nick.eth",
         projectId: 3, // Dynamic
         date: "March 13, 2024",
         rating: 5,
@@ -43,6 +47,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 4,
         userId: 2,
+        username: "nick.eth",
         projectId: 4, // Mina Protocol
         date: "March 12, 2024",
         rating: 4,
@@ -53,6 +58,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 5,
         userId: 3,
+        username: "ricmoo.eth",
         projectId: 5, // Bitkub
         date: "March 11, 2024",
         rating: 3,
@@ -63,6 +69,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 6,
         userId: 4,
+        username: "brantly.eth",
         projectId: 6, // Oasis Protocol
         date: "March 10, 2024",
         rating: 5,
@@ -73,6 +80,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 7,
         userId: 1, // vitalik.eth
+        username: "vitalik.eth",
         projectId: 3, // Dynamic
         date: "March 9, 2024",
         rating: 4,
@@ -82,6 +90,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 8,
         userId: 2, // nick.eth
+        username: "nick.eth",
         projectId: 5, // Bitkub
         date: "March 8, 2024",
         rating: 4,
@@ -91,6 +100,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 9,
         userId: 3, // ricmoo.eth
+        username: "ricmoo.eth",
         projectId: 1, // Scroll
         date: "March 7, 2024",
         rating: 5,
@@ -100,6 +110,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 10,
         userId: 4, // brantly.eth
+        username: "brantly.eth",
         projectId: 2, // Sign Protocol
         date: "March 6, 2024",
         rating: 3,
@@ -109,6 +120,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 11,
         userId: 5, // gavin.eth
+        username: "gavin.eth",
         projectId: 6, // Oasis Protocol
         date: "March 5, 2024",
         rating: 4,
@@ -118,6 +130,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 12,
         userId: 6, // justin.eth
+        username: "justin.eth",
         projectId: 4, // Mina Protocol
         date: "March 4, 2024",
         rating: 5,
@@ -128,6 +141,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 13,
         userId: 1, // vitalik.eth
+        username: "vitalik.eth",
         projectId: 6, // Oasis Protocol
         date: "March 3, 2024",
         rating: 4,
@@ -137,6 +151,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 14,
         userId: 2, // nick.eth
+        username: "nick.eth",
         projectId: 1, // Scroll
         date: "March 2, 2024",
         rating: 5,
@@ -146,6 +161,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 15,
         userId: 3, // ricmoo.eth
+        username: "ricmoo.eth",
         projectId: 4, // Mina Protocol
         date: "March 1, 2024",
         rating: 4,
@@ -155,6 +171,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 16,
         userId: 4, // brantly.eth
+        username: "brantly.eth",
         projectId: 5, // Bitkub
         date: "February 29, 2024",
         rating: 4,
@@ -164,6 +181,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 17,
         userId: 5, // gavin.eth
+        username: "gavin.eth",
         projectId: 2, // Sign Protocol
         date: "February 28, 2024",
         rating: 5,
@@ -173,6 +191,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 18,
         userId: 6, // justin.eth
+        username: "justin.eth",
         projectId: 3, // Dynamic
         date: "February 27, 2024",
         rating: 4,
@@ -182,6 +201,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 19,
         userId: 1, // vitalik.eth
+        username: "vitalik.eth",
         projectId: 4, // Mina Protocol
         date: "February 26, 2024",
         rating: 5,
@@ -191,6 +211,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 20,
         userId: 2, // nick.eth
+        username: "nick.eth",
         projectId: 6, // Oasis Protocol
         date: "February 25, 2024",
         rating: 4,
@@ -200,6 +221,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 21,
         userId: 3, // ricmoo.eth
+        username: "ricmoo.eth",
         projectId: 2, // Sign Protocol
         date: "February 24, 2024",
         rating: 4,
@@ -209,6 +231,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 22,
         userId: 4, // brantly.eth
+        username: "brantly.eth",
         projectId: 1, // Scroll
         date: "February 23, 2024",
         rating: 5,
@@ -218,6 +241,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 23,
         userId: 5, // gavin.eth
+        username: "gavin.eth",
         projectId: 3, // Dynamic
         date: "February 22, 2024",
         rating: 4,
@@ -227,6 +251,7 @@ export const USER_COMMENTS: Comment[] = [
     {
         id: 24,
         userId: 6, // justin.eth
+        username: "justin.eth",
         projectId: 5, // Bitkub
         date: "February 21, 2024",
         rating: 3,

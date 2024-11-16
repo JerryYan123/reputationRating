@@ -28,10 +28,12 @@ const UserAccount: React.FC<UserAccountProps> = ({ projectId }) => {
         console.log(wallet_address);
         const project = PROJECTS.find(p => p.id === projectId);
         const project_address = project?.address || "";
+        console.log(project_address)
         
         const url = `https://api-sepolia.scrollscan.com/api?module=account&action=txlist&address=${wallet_address}&startblock=90000&endblock=9999999&page=0&offset=10&sort=asc&apikey=${SCROLLSCAN_API_KEY}`
         try {
             const result = await getInformation(url, project_address);
+            console.log(result)
             if (result.interactionFound) {
                 // Create attestation
                 await createNotaryAttestation(

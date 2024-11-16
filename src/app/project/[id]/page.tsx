@@ -25,21 +25,6 @@ const ProjectDetailPage = ({ params }: { params: { id: string } }) => {
         image: "/placeholder-project-image.png"
     };
 
-    const user_address = "0x576198c952fDfa78E501802c10E6A21eA9752b8C";
-
-    React.useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await queryAttestations(user_address);
-                console.log('Attestations for user:', data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-
-        fetchData();
-    }, [user_address]);
-
     return (
         <DynamicContextProvider
             settings={{
