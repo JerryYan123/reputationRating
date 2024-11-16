@@ -3,8 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import StarRating from "@/components/StarRating";
-import { USER_COMMENTS, Comment } from "@/constants/comments";
 import { PROJECTS } from "@/constants/projects";
+import { getUserData } from "@/components/helper_function/get_data";
+import { USERS } from "@/constants/users";
+import { Comment } from "@/constants/comments";
 
 const CommentItem: React.FC<Comment> = ({ projectId, date, rating, weight, review }) => {
     const project = PROJECTS.find(p => p.id === projectId);
@@ -15,22 +17,22 @@ const CommentItem: React.FC<Comment> = ({ projectId, date, rating, weight, revie
                 <div className="flex flex-col">
                     <Link 
                         href={`/project/${projectId}`}
-                        className="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                        className="text-blue-600 hover:text-blue-800 font-medium text-lg"
                     >
                         {project?.name}
                     </Link>
-                    <span className="text-gray-500 text-xs">{project?.rank}</span>
-                    <span className="text-gray-600 text-xs mt-1">{date}</span>
+                    <span className="text-gray-500 text-base">{project?.rank}</span>
+                    <span className="text-gray-600 text-base mt-1">{date}</span>
                 </div>
-                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">
+                <div className="bg-blue-500 text-white px-3 py-1.5 rounded-full text-sm">
                     Weight: {weight}
                 </div>
             </div>
             <StarRating rating={rating} size="small" />
-            <p className="text-gray-800 text-xs mt-1 line-clamp-3">{review}</p>
-            <div className="flex justify-end space-x-4 mt-1">
-                <button className="text-gray-600 text-xs flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <p className="text-gray-800 text-base mt-2 line-clamp-3">{review}</p>
+            <div className="flex justify-end space-x-4 mt-2">
+                <button className="text-gray-600 text-base flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -40,8 +42,8 @@ const CommentItem: React.FC<Comment> = ({ projectId, date, rating, weight, revie
                     </svg>
                     {Math.floor(Math.random() * 100)}
                 </button>
-                <button className="text-gray-600 text-xs flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button className="text-gray-600 text-base flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -61,7 +63,32 @@ interface CommentHistoryProps {
 }
 
 const CommentHistory: React.FC<CommentHistoryProps> = ({ userId }) => {
-    const userComments = USER_COMMENTS.filter(comment => comment.userId === userId);
+    const [userComments, setUserComments] = React.useState<Comment[]>([]);
+
+    React.useEffect(() => {
+        const fetchUserData = async () => {
+            const user = USERS.find(u => u.id === userId);
+            if (!user) {
+                console.error('User not found');
+                return;
+            }
+            const userData = await getUserData(user.address);
+            
+            // Transform the userData into Comment array
+            const comments = userData.map(item => ({
+                id: item.attestation.id,
+                projectId: item.parsedData.Contract,
+                date: new Date(Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000)).toLocaleDateString(),
+                rating: Number(item.parsedData.Score),
+                weight: Math.floor(Math.random() * 4) + 7, // Random number between 7-10
+                review: item.parsedData.Comment
+            }));
+            
+            setUserComments(comments);
+        };
+
+        fetchUserData();
+    }, [userId]);
 
     if (userComments.length === 0) {
         return (

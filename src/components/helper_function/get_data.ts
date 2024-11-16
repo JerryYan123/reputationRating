@@ -77,8 +77,21 @@ async function queryAttestations(indexingValue: string) {
 }
 
 
+// Add this new function
+async function getUserData(userAddress: string) {
+  try {
+    const attestations = await queryAttestations(userAddress);
+    console.log('User Attestations:', attestations);
+    return attestations;
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    return [];
+  }
+}
+
+
 // Export
-export { queryAttestations, findAttestation };
+export { queryAttestations, findAttestation, getUserData };
 
 
 
