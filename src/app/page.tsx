@@ -7,6 +7,7 @@ import Header from "@/components/Layout/Header";
 import CategoryTabs from "@/components/CategoryTabs";
 import UserList from "@/components/UserList";
 import ProjectList from "@/components/ProjectList";
+import Search from "@/components/Layout/Search";
 
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 
@@ -21,6 +22,7 @@ export default function Home() {
       >
         <div className="min-h-screen bg-gray-50">
           <Header />
+          <Search />
           <main className="container mx-auto py-12 px-4">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
               <CategoryTabs />

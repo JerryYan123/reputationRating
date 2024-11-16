@@ -73,6 +73,7 @@ const CommentHistory: React.FC<CommentHistoryProps> = ({ userId }) => {
                 return;
             }
             const userData = await getUserData(user.address);
+            console.log(userData)
             
             // Transform the userData into Comment array
             const comments = userData.map(item => ({
