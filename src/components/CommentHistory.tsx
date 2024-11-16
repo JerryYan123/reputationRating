@@ -9,7 +9,7 @@ import { USERS } from "@/constants/users";
 import { Comment } from "@/constants/comments";
 
 const CommentItem: React.FC<Comment> = ({ projectId, date, rating, weight, review }) => {
-    const project = PROJECTS.find(p => p.id === projectId);
+    const project = PROJECTS.find(p => p.address === projectId) || PROJECTS[0];
 
     return (
         <div className="mb-4 pb-4 border-b border-gray-200 last:border-b-0">
@@ -81,8 +81,10 @@ const CommentHistory: React.FC<CommentHistoryProps> = ({ userId }) => {
                 projectId: item.parsedData.Contract,
                 date: new Date(Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000)).toLocaleDateString(),
                 rating: Number(item.parsedData.Score),
-                weight: Math.floor(Math.random() * 4) + 7, // Random number between 7-10
-                review: item.parsedData.Comment
+                weight: Math.floor(Math.random() * 4) + 7,
+                review: item.parsedData.Comment,
+                userId: userId,
+                username: user.name
             }));
             
             setUserComments(comments);

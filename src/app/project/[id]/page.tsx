@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS, Project } from '@/constants/projects';
 import OpenAI from "openai";
-import { OPENAI_API_KEY } from "@/secrets";
+import { OPENAI_API_KEY, OPENAI_BASE_URL } from "@/secrets";
 import { USER_COMMENTS } from '@/constants/comments';
 
 const ProjectDetailPage = ({ params }: { params: { id: string } }) => {
@@ -33,6 +33,7 @@ const ProjectDetailPage = ({ params }: { params: { id: string } }) => {
         try {
             const openai = new OpenAI({
                 apiKey: OPENAI_API_KEY,
+                baseURL: OPENAI_BASE_URL,
                 dangerouslyAllowBrowser: true
             });
 

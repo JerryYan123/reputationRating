@@ -20,13 +20,13 @@ const Header = () => {
                             <Logo />
                         </Link>
                     </div>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-8">
                         <Link href="/list-project">
-                            <span className="bg-black hover:bg-black/90 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 inline-flex items-center">
+                            <span className="bg-black hover:bg-black/90 text-white px-8 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 inline-flex items-center hover:transform hover:scale-105">
                                 List a Project
                             </span>
                         </Link>
-                        <div className="ml-2">
+                        <div className="ml-2 scale-125">
                             <DynamicWidget />
                         </div>
                     </div>
