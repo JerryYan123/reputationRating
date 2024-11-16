@@ -13,18 +13,18 @@ const CommentItem: React.FC<Comment> = ({ date, rating, weight, review, username
         <div className="mb-4 pb-4 border-b border-gray-200 last:border-b-0">
             <div className="flex justify-between items-center mb-1">
                 <div>
-                    <span className="font-semibold text-sm text-black">
+                    <span className="font-semibold text-base text-black">
                         {username}
                     </span>
-                    <span className="text-gray-600 ml-2 text-xs">{date}</span>
+                    <span className="text-gray-600 ml-2 text-sm">{date}</span>
                 </div>
-                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Weight: {weight}</div>
+                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-sm">Weight: {weight}</div>
             </div>
             <StarRating rating={rating} size="small" />
-            <p className="text-gray-800 text-xs mt-1 line-clamp-3">{review}</p>
+            <p className="text-gray-800 text-sm mt-2 mb-2 line-clamp-3">{review}</p>
             <div className="flex justify-end space-x-4 mt-1">
-                <button className="text-gray-600 text-xs flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button className="text-gray-600 text-sm flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -34,8 +34,8 @@ const CommentItem: React.FC<Comment> = ({ date, rating, weight, review, username
                     </svg>
                     {likes}
                 </button>
-                <button className="text-gray-600 text-xs flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button className="text-gray-600 text-sm flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -52,8 +52,8 @@ const CommentItem: React.FC<Comment> = ({ date, rating, weight, review, username
 
 const CommentList: React.FC = () => {
     return (
-        <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-            <h2 className="text-xl font-bold mb-4 text-black">All Comments</h2>
+        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 className="text-2xl font-bold mb-6 text-black">All Comments</h2>
             <div className="max-h-[600px] overflow-y-auto">
                 {USER_COMMENTS.map((comment) => (
                     <CommentItem key={comment.id} {...comment} />
