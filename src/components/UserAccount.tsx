@@ -4,11 +4,18 @@ import React from "react";
 import StarRating from "@/components/StarRating";
 import { getInformation } from "@/components/helper_function/search_validity";
 import { createNotaryAttestation } from "@/components/helper_function/upload_data";
+import { PROJECTS } from '@/constants/projects';
+import { useDynamicContext } from '@dynamic-labs/sdk-react-core'; 
 
-const UserAccount: React.FC = () => {
+interface UserAccountProps {
+    projectId: number;
+}
+
+const UserAccount: React.FC<UserAccountProps> = ({ projectId }) => {
     const [rating, setRating] = React.useState(0);
     const [comment, setComment] = React.useState("");
     const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const { primaryWallet } = useDynamicContext();
 
     const handleRatingChange = (newRating: number) => {
         setRating(newRating);
@@ -17,8 +24,11 @@ const UserAccount: React.FC = () => {
     const handleSubmit = async () => {
         setIsSubmitting(true);
         const SCROLLSCAN_API_KEY = "API_TOKEN";
-        const wallet_address = "0x576198c952fDfa78E501802c10E6A21eA9752b8C"
-        const project_address = "0xf9419d90C900e48551B0bcB294fD810ed0e27f26"
+        const wallet_address = primaryWallet?.address || "";
+        console.log(wallet_address);
+        const project = PROJECTS.find(p => p.id === projectId);
+        const project_address = project?.address || "";
+        
         const url = `https://api-sepolia.scrollscan.com/api?module=account&action=txlist&address=${wallet_address}&startblock=90000&endblock=9999999&page=0&offset=10&sort=asc&apikey=${SCROLLSCAN_API_KEY}`
         try {
             const result = await getInformation(url, project_address);

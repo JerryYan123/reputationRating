@@ -1,7 +1,8 @@
 "use client";
-import { use } from 'react';
+import React from 'react';
 import { DynamicContextProvider } from '@dynamic-labs/sdk-react-core';
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
+import { queryAttestations } from "@/components/helper_function/get_data";
 import CommentList from "@/components/CommentList";
 import Header from "@/components/Layout/Header";
 import UserAccount from "@/components/UserAccount";
@@ -15,6 +16,7 @@ const ProjectDetailPage = ({ params }: { params: { id: string } }) => {
     const projectDetails: Project = PROJECTS.find(p => p.id === parseInt(unwrappedParams.id)) || {
         id: parseInt(unwrappedParams.id),
         name: 'Unknown Project',
+        address: '',
         change: 0,
         score: 0,
         reviews: 0,
@@ -22,6 +24,21 @@ const ProjectDetailPage = ({ params }: { params: { id: string } }) => {
         description: 'No description available',
         image: "/placeholder-project-image.png"
     };
+
+    const user_address = "0x576198c952fDfa78E501802c10E6A21eA9752b8C";
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await queryAttestations(user_address);
+                console.log('Attestations for user:', data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, [user_address]);
 
     return (
         <DynamicContextProvider
@@ -68,7 +85,7 @@ const ProjectDetailPage = ({ params }: { params: { id: string } }) => {
                             <CommentList />
                         </div>
                         <div>
-                            <UserAccount />
+                            <UserAccount projectId={projectDetails.id} />
                         </div>
                     </div>
                 </main>

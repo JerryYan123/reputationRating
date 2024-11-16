@@ -1,6 +1,7 @@
 export interface Project {
     id: number;
     name: string;
+    address: string;
     change: number;
     score: number;
     reviews: number;
@@ -13,6 +14,7 @@ export const PROJECTS: Project[] = [
     { 
         id: 1, 
         name: 'Scroll', 
+        address: "0x7eb88DAaA25f3DBbc9815A036EA13b00E11fE122",
         change: 2, 
         score: 9.9, 
         reviews: 5021,
@@ -23,6 +25,7 @@ export const PROJECTS: Project[] = [
     { 
         id: 2, 
         name: 'Sign Protocol', 
+        address: "0x31A239f3e39c5D8BA6B201bA81ed584492Ae960F",
         change: 1, 
         score: 9.8, 
         reviews: 4832,
@@ -33,6 +36,7 @@ export const PROJECTS: Project[] = [
     { 
         id: 3, 
         name: 'Dynamic', 
+        address: "0xc0faBF14f8ad908b2dCE4C8aA2e7c1a6bD069957",
         change: -2, 
         score: 9.7, 
         reviews: 4567,
@@ -43,6 +47,7 @@ export const PROJECTS: Project[] = [
     { 
         id: 4, 
         name: 'Mina Protocol', 
+        address: "0x33d91116e0370970444B0281AB117e161fEbFcdD",
         change: 2, 
         score: 9.6, 
         reviews: 4123,
@@ -53,6 +58,7 @@ export const PROJECTS: Project[] = [
     { 
         id: 5, 
         name: 'Bitkub', 
+        address: "0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4",
         change: -1, 
         score: 9.5, 
         reviews: 3988,
@@ -63,6 +69,7 @@ export const PROJECTS: Project[] = [
     { 
         id: 6, 
         name: 'Oasis Protocol', 
+        address: "0xf55bec9cafdbe8730f096aa55dad6d22d44099df",
         change: -1, 
         score: 9.4, 
         reviews: 3654,

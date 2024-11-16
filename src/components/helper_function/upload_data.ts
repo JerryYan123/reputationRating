@@ -4,7 +4,7 @@ import { SIGNER_PRIVATE_KEY } from "@/secrets";
 
 const client = new SignProtocolClient(SpMode.OnChain, {
   chain: EvmChains.scrollSepolia,
-  // account: privateKeyToAccount(SIGNER_PRIVATE_KEY),
+  account: privateKeyToAccount(SIGNER_PRIVATE_KEY),
 });
 
 export async function createNotaryAttestation(Contract: string, User: string, Hash: string, Score: number, Comment: string) {

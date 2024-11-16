@@ -46,7 +46,7 @@ const Header = () => {
                 } else if (suggestedProject) {
                     router.push(`/project/${encodeURIComponent(suggestedProject.toLowerCase())}`);
                 }
-            } catch (error) {
+            } catch (error: any) {
                 console.error('Search error:', error);
                 setSearchQuery(`Error: ${error.message || 'Failed to get suggestion'}`);
             }
