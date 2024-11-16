@@ -50,17 +50,20 @@ const Search = () => {
     };
 
     return (
-        <div className="relative w-full max-w-3xl mx-auto mt-8">
+        <div className="relative w-full max-w-4xl mx-auto mt-12">
             <input
                 type="text"
-                placeholder="Ask any question to find the most related Web3 projects..."
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 text-black placeholder-gray-400"
+                placeholder="Ask our AI Assistant to find the perfect Web3 project for you! ✨"
+                className="w-full pl-12 pr-6 py-4 border-2 border-gray-300 rounded-full 
+                text-lg focus:outline-none focus:ring-4 focus:ring-gray-200/50 
+                text-black placeholder-gray-400 shadow-md hover:shadow-lg 
+                transition-all duration-200 text-center placeholder:text-center"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleSearch}
             />
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <SearchIcon className="h-5 w-5 text-gray-400" />
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <SearchIcon className="h-6 w-6 text-gray-400" />
             </div>
         </div>
     );
