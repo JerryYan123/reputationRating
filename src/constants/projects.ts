@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
         score: 9.9, 
         reviews: 5021,
         rank: "#1 in Layer 2",
-        description: "Scroll is a revolutionary zkEVM-based zkRollup built on Ethereum that enables native EVM compatibility. It provides a scalable and secure solution for blockchain transactions, significantly reducing costs while maintaining the robust security of the Ethereum network.",
+        description: "Scroll is building a ZK rollup solution to scale Ethereum. Powered by our zkEVM, using Scroll looks and feels just like using Ethereum for users and devs!",
         image: "/images/projects/scroll.png"
     },
     { 
@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
         score: 9.8, 
         reviews: 4832,
         rank: "#1 in Infrastructure",
-        description: "Sign Protocol is an innovative blockchain-based platform that revolutionizes digital signatures and document verification. By leveraging blockchain technology, it ensures document authenticity and provides a streamlined verification process for businesses and individuals.",
+        description: "Sign is building a global verification platform to make all digital information, such as identity, ownership, and certificates, verifiable onchain. Sign Protocol offers a suite of tools, infrastructure, and standards to create a future where verifiable attestations drive all claims and assertions on the web and the world around us. We are excited to see Sign Protocol usher in a future where we can trust but, more importantly, validate all data using attestations to enable improved governance protocols, point systems, reward distribution systems, trust and referral networks, and much more.",
         image: "/images/projects/sign_protocol.png"
     },
     { 
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
         score: 9.7, 
         reviews: 4567,
         rank: "#1 in Authentication",
-        description: "Dynamic delivers cutting-edge Web3 authentication solutions with seamless wallet integration capabilities. The platform offers customizable onboarding flows and enterprise-grade security features, making it the perfect choice for businesses entering the Web3 space.",
+        description: "Dynamic allows developers to craft magical onchain sign up experiences. They offer a suite of tools for effortless log in, wallet creation and user management. Dynamic was designed for users, and built for developers.",
         image: "/images/projects/dynamic.png"
     },
     { 
@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
         score: 9.6, 
         reviews: 4123,
         rank: "#1 in Layer 1",
-        description: "Mina Protocol stands out as the world's lightest blockchain protocol, powered by sophisticated zero-knowledge proofs. Its innovative design maintains a constant 22kb size while enabling scalable decentralized applications, setting new standards for blockchain efficiency.",
+        description: "Mina is a lightweight ZK blockchain for proving anything privately and securely. Its blockchain uses recursive zk-SNARKs to design an entire blockchain that can be verified in just 22kb, the size of a couple of tweets. Mina will transform the way information is verified online, by empowering individuals to prove their sensitive information safely, where anyone can easily verify it with its lightweight ‘proof of everything.’",
         image: "/images/projects/mina_protocol.png"
     },
     { 
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
         score: 9.5, 
         reviews: 3988,
         rank: "#1 in Exchange",
-        description: "Bitkub is a leading cryptocurrency exchange platform that provides a secure trading environment for crypto enthusiasts. The platform features comprehensive trading pairs support and advanced trading tools, making it a preferred choice for both beginners and experienced traders.",
+        description: "Bitkub Chain, a fully EVM-compatible Layer 1 blockchain, is the leading blockchain infrastructure in Southeast Asia. It enables users to interact with decentralized applications through affordable transaction fees, high-speed confirmations, and transparent operations accessible to everyone.",
         image: "/images/projects/bitkub.png"
     },
     { 
@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
         score: 9.4, 
         reviews: 3654,
         rank: "#1 in Privacy",
-        description: "Oasis Protocol is an innovative privacy-focused layer 1 blockchain that specializes in confidential smart contracts. With its advanced ParaTime parallel execution framework and scalable DeFi infrastructure, it offers unprecedented privacy features while maintaining high performance.",
+        description: "Oasis is home to Sapphire, the world's first confidential EVM network, the Oasis Privacy Layer (OPL), a cross-chain privacy solution that can be used by any EVM dApp, and ROFL, a framework that adds support for off-chain components to runtimes like Oasis Sapphire. Oasis is a layer-one blockchain built to support confidential compute for applications at scale, with a unique layered architecture that presents the optimal building and execution environment for DeFi, AI, RWAs, Gaming, NFTs, DAO governance, and more.",
         image: "/images/projects/oasis_protocol.png"
     }
 ];
