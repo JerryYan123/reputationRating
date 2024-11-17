@@ -5,7 +5,7 @@ import { Search as SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { PROJECTS } from "@/constants/projects";
 import OpenAI from "openai";
-import { OPENAI_API_KEY } from "@/secrets";
+import { OPENAI_API_KEY, OPENAI_BASE_URL } from "@/secrets";
 
 const Search = () => {
     const router = useRouter();
@@ -17,6 +17,7 @@ const Search = () => {
             try {
                 const openai = new OpenAI({
                     apiKey: OPENAI_API_KEY,
+                    baseURL: OPENAI_BASE_URL,
                     dangerouslyAllowBrowser: true
                 });
 
