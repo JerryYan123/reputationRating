@@ -4,11 +4,11 @@ const CategoryTabs = () => {
   const categories = ['All', 'Blockchain', 'NFTs', 'DeFi', 'DAOs', 'Metaverse', 'Gaming'];
 
   return (
-    <div className="flex space-x-3 mb-6">
+    <div className="flex space-x-4 mb-0">
       {categories.map((category) => (
         <button
           key={category}
-          className={`px-4 py-1.5 rounded-full text-sm ${
+          className={`px-6 py-2.5 rounded-full text-base font-medium ${
             category === 'All' ? 'bg-black text-white' : 'bg-gray-100 text-black'
           }`}
         >
