@@ -10,6 +10,12 @@ import ProjectList from "@/components/ProjectList";
 import Search from "@/components/Layout/Search";
 
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'BlockRate',
+  description: 'BlockRate is a platform for rating and reviewing blockchain projects.',
+}
 
 export default function Home() {
   return (
