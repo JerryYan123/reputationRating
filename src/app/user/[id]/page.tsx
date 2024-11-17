@@ -112,7 +112,20 @@ const UserHistoryPage = ({ params }: { params: { id: string } }) => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h1 className="text-3xl font-bold text-black">{user.name}</h1>
+                                    <div className="flex items-center">
+                                        <h1 className="text-3xl font-bold text-black">{user.name}</h1>
+                                        <div className="relative ml-2 cursor-pointer group">
+                                            <svg className="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                            </svg>
+                                            <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                                <div className="bg-gray-800 text-white text-sm py-1 px-3 rounded shadow-lg">
+                                                    Verified by Scroll Canvas Badge
+                                                </div>
+                                                <div className="w-2 h-2 bg-gray-800 transform rotate-45 absolute left-1/2 -translate-x-1/2 -bottom-1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <p className="mt-2 text-gray-800">Total Reviews: {user.totalReviews}</p>
                                     <p className="text-gray-800">Total Likes: {user.totalLikes}</p>
                                     <p className="text-gray-800">Rank: #{user.rank}</p>
