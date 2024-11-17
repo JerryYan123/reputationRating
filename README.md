@@ -1,3 +1,12 @@
+# Blockrate
+We are a team, RedLark Coder.
+
+Blockrate is an On-chain Public Good. We aim to solve the reputation and trust issues between on-chain projects and users. We have built a verifiable/visual platform.
+
+And our ScrolltesnetScan (https://sepolia.scrollscan.com/) contract address is **0xA609327B865Ee0A04fB7B428c57d74B483Ca00Fb**.
+
+# Usage
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
